@@ -79,12 +79,18 @@
                                       <!-- <input type="text" class="form-control" placeholder="Prova a cercare: Lezioni di Laravel" aria-label="Prova a cercare: Lezioni di Laravel" aria-describedby="basic-addon1"> -->
                                     </div>
                             </div>
-                            <div class="col">
+                            <div id="chat" class="col bg-white ">
                                 
-                                    <div v-for="(currentContact, index) in contacts" class="d-flex justify-content-center  align-items-center ">
-                                        <img :src="currentContact.avatar" alt="">
-
-                                        {{currentContact.name}}
+                                    <div id="contacts" v-for="(currentContact, index) in contacts" class="d-flex align-items-center gap-2  p-3">
+                                        <img 
+                                        :src="currentContact.avatar" 
+                                        alt=""
+                                        class="rounded-5 "
+                                        >
+                                        <div class="d-flex flex-column ">
+                                            {{currentContact.name}}
+                                            <span>Ultimo messaggio inviato</span>
+                                        </div>
 
                                     </div>
                                 
