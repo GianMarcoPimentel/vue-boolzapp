@@ -6,4 +6,4 @@ createApp({
 
         }
     }
-}).mount('@app')
+}).mount('#app')

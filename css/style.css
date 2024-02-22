@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #D7DBD7;
+}
+header{
+    height: 150px;
+    width: 100vw;
+    background-color: #009688;
+    position: relative;
+    
+}
+.container{
+    width: 1000px;
+    height: 600px;
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    right: 50px;
+    
+}
+#io{
+    background-color: #EAEAEA;
+    width: 40%;
+    padding: 5px;
+}
+#io img{
+    width: 20px;
+    height: 20px;
+    
+}
+#icons-io{
+    color: #B1B1B1;
+    
+}
