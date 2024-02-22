@@ -13,13 +13,13 @@ header{
     position: relative;
     
 }
-.container{
+#container{
     width: 1000px;
-    height: 600px;
-    border: 1px solid black;
+    height: 100vh;
     margin-left: auto;
     margin-right: auto;
     padding: 0;
+    
     position: absolute;
     top: 50px;
     left: 50px;
@@ -28,15 +28,49 @@ header{
 }
 #io{
     background-color: #EAEAEA;
-    width: 40%;
-    padding: 5px;
+    
+    
 }
 #io img{
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
     
 }
 #icons-io{
     color: #B1B1B1;
+
+}
+#altri{
+   
+    background-color: #EAEAEA;
     
+    
+}
+#altri img{
+    width: 40px;
+    height: 40px;
+    
+}
+#altri .accesso{
+    font-size: 10px;
+    color: #838A99;
+}
+#altri .user{
+    font-size: 15px;
+}
+#icons-altri{
+    color: #B1B1B1;
+
+}
+#notifiche{
+    background-color: #8EDAFC;
+}
+#icon-notifiche{
+    width: 50px;
+    height: 50px;
+    color: #8EDAFC;
+    object-fit: contain;
+}
+#notifiche a{
+    color: #618FA7;
 }
