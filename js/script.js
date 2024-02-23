@@ -172,10 +172,7 @@ createApp({
                 message : '',
                 status: 'sent'       
             },
-            answers : {
-                message : '',
-                status : 'received',
-            },
+            
             
         }
     },
@@ -195,6 +192,7 @@ createApp({
                 if(this.newMessages.message.trim() != ""){
 
                     this.activeContact.messages.push({...this.newMessages});
+                    console.log( this.newMessages.status)
                     this.newMessages.message = "";
                 };
 
@@ -206,10 +204,13 @@ createApp({
         receiveMessage() {
                   
             axios.get('https://flynn.boolean.careers/exercises/api/random/sentence').then((result) => {
-                    /* this.answers = result.data.response; */
-                    this.activeContact.messages.push(result.data.response);
+                    
+                this.newMessages.status =  'received'
+                console.log( this.newMessages.status)
+                this.activeContact.messages.push(result.data.response)
+                console.log(result.data.response)
+                    
               /* this.emails.push(result.data.response); */
-              console.log(result.data.response) 
             });
 
         },
