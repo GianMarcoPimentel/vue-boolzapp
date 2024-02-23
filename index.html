@@ -14,6 +14,8 @@
 <body>
             <!-- Script per utlizzate vue  -->
     <script src="https://unpkg.com/vue@3"></script>
+    <!-- axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
     <div id="app" >
         <div class="back-top">
 
@@ -75,8 +77,29 @@
                                             <div class="last-message-time">12:00</div>
                                         </div>
                                     </div>
+                                    
+                                
+                                        <div 
+                                        class="chat-preview" 
+                                        v-for="(contact, index) in contacts"
+                                        :class="contact == activeContact ? 'active' : '' "
+                                        @click="changeChat(index)"
+                                        >
+                                            <img 
+                                            :src="contact.avatar" 
+                                            alt=""
+                                            class="rounded-5 "
+                                            >
+                                            <div>
+                                                <div class="user-name">{{contact.name}}</div>
+                                                <div class="last-message">Ultimo messaggio inviato</div>
+                                                <div class="last-message-time">12:00</div>
+                                            </div>
+                                        </div>
+                                    
                                 
                             </div>
+                         
                         
                          
                          
