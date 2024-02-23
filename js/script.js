@@ -168,11 +168,11 @@ createApp({
                     ],
                 }
             ],
-            newMessages : [   {
+            newMessages :    {
                 message : '',
                 status: 'sent'       
             } 
-            ],
+            ,
             
             
         }
@@ -188,10 +188,16 @@ createApp({
         addMessages() {
             
 
-                this..messagges.push(this.newMessages);
-                this.newMessages.text="";
+                /* this.messagges.push(this.newMessages);
+                this.newMessages.text="" */;
+                if(this.newMessages.message.trim() != ""){
+
+                    this.activeContact.messages.push({...this.newMessages});
+                    this.newMessages.message = "";
+                };
             
-            console.log(this.newMessages);
-        }
+
+
+        },
     }
 }).mount('#app')
