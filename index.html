@@ -86,10 +86,12 @@
  
                             <div id="chat-profile">
                                 <div id="chat-profile-image">
-                                    <img src="./img/avatar_io.jpg" alt="profile pic">
+                                    <img 
+                                    src="./img/avatar_io.jpg"
+                                    :src="activeContact[index].avatar" alt="profile pic">
                                 </div>
                                 <div>
-                                    <div>Sofia</div>
+                                    <div>{{activeContactIndex.name}}</div>
                                     <span>
                                         Ultimo accesso oggi alle 12:00
                                     </span>
