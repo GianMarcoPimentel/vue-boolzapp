@@ -77,52 +77,58 @@
                          
                      </div>
                      <div id="altri" >
-                         <div class="d-flex justify-content-between align-items-center ">
+                         <div id="top-bar">
  
-                             <div class="d-flex">
-                                 <img class="rounded-5 "src="./img/avatar_io.jpg" alt="">
-                                 <div class="justify-content-center  m-0">
-                                     <span class="user">Sofia</span>
-                                     <p class="accesso">Ultimo accesso oggi alle 12:00</p class="accesso">
-                                 </div>
-                             </div>
-                             <div id="icons-altri">
-                                 <i class="fa-solid fa-magnifying-glass me-2"></i>
-                                 <i class="fa-solid fa-paperclip me-2"></i>
-                                 <i class="fa-solid fa-ellipsis-vertical me-2"></i>
-             
-                             </div>
+                            <div id="chat-profile">
+                                <div id="chat-profile-image">
+                                    <img src="./img/avatar_io.jpg" alt="profile pic">
+                                </div>
+                                <div>
+                                    <div>Sofia</div>
+                                    <span>
+                                        Ultimo accesso oggi alle 12:00
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="icons d-flex gap-3">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <i class="fa-solid fa-paperclip"></i>
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </div>
                          </div>
-                         <div class="d-flex flex-column align-items-center justify-content-center  mx-3">
+                         <div id="current-chat">
+                            <div class="container">
+                                <div class="message sent">
+                                    <div class="text">
+                                        Ricordati le cipolle
+                                    </div>
+                                    <div class="time">
+                                        16:15
+                                    </div>
+                                </div>
+                                <div class="message recieved">
+                                    <div class="text">
+                                        Ricordati le cipolle
+                                    </div>
+                                    <div class="time">
+                                        16:15
+                                    </div>
+                                </div>
+                            </div>
  
-                             <div class="rounded-2 col-4 mt-3 bg-danger ">
-                                 <span>Hai fatto la spesa?</span>
-                                 <p class="text-end">16:15</p>
-                             </div>
-                             <div class="rounded-2 col-4 mt-3 align-items-end  ">
-                                 <span>Ricordati le cipolle</span>
-                                 <p class="text-end">16:15</p>
-                             </div>
-                             <div class="rounded-2 bg-white  col-4 mt-3 ">
-                                 <span class="mt-2">SI!</span>
-                                 <p class="text-end">18:22</p>
-                             </div>
                          </div>
-                         <div id="messages" class="col bg-gray">
-                             <div class=" my-bg d-flex  justify-content-between align-items-center gap-2 p-2">
+                         <div id="messages-bar">
                                  <button class="border-0 ">
                                      <i class="fa-regular fa-face-smile"></i>
                                  </button>
+
                                  <input 
                                  type="text" 
-                                 class="form-control border-0 py-2 px-1 text-gray rounded-2" 
                                  placeholder="Messaggio" 
-                                 aria-label="Messaggio" 
-                                 aria-describedby="basic-addon1">
+                                 >
                                  <button class="border-0 ">
                                      <i class="fa-solid fa-microphone"></i>
                                  </button>
-                             </div>
                          </div>
                          
                 
