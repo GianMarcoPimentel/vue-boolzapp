@@ -61,6 +61,7 @@
                                     <div 
                                     class="chat-preview" 
                                     v-for="(currentContact, index) in contacts"
+                                    :class="index == activeChatIndex ? 'active' : '' "
                                     @click="changeChat(index)"
                                     >
                                         <img 

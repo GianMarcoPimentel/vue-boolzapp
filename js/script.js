@@ -174,7 +174,7 @@ createApp({
     methods :{
 
         changeChat(index){
-            console.log(activeContactIndex)
+            this.activeContactIndex = index;
         }
     }
 }).mount('#app')
