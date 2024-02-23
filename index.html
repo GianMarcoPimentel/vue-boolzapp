@@ -15,121 +15,129 @@
             <!-- Script per utlizzate vue  -->
     <script src="https://unpkg.com/vue@3"></script>
     <div id="app" >
-        <header >
-            
-        </header>
+        <div class="back-top">
 
-    
-        <div id="container">
-            
-        
-                    <div id="io" >
-                        <div class="d-flex justify-content-between align-items-center ">
-                            <div class="d-flex align-items-center">
-                                <img class="rounded-5 " src="./img/avatar_2.jpg" alt="foto1 utente">
-                                <span>Gian Marco</span>
-                            </div>
-                            <div id="icons-io" >
-                                <i class="fa-solid fa-circle-notch me-2"></i>
-                                <i class="fa-solid fa-message me-2 "></i>
-                                <i class="fa-solid fa-ellipsis-vertical me-2"></i>
-                            </div>
-        
-                        </div>
-                        <div class="col p-0">
-                            <div id="notifiche" class="d-flex align-items-center gap-2 p-2">
-                                <div id="icon-notifiche" class="bg-white rounded-5 d-flex justify-content-center align-items-center ">
-                                    <i class="fa-solid fa-bell-slash"></i>
-                                </div>
-                                <div class="d-flex flex-column ">
-                                    <span>Ricevi notifiche di nuovi messaggi</span>
-                                    <a href="">Attiva notifiche desktop</a>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="col">
-                                    <div class="input-group">     
-                                           <button>
-                                               <i class="fa-solid fa-magnifying-glass ms-2"></i>
-                                           </button>
-                                            <input class="form-control me-2 bg-input  border-0 " type="search" placeholder="Prova a cercare: Lezioni di Laravel" aria-label="Search">
-                                          <!-- <input type="text" class="form-control" placeholder="Prova a cercare: Lezioni di Laravel" aria-label="Prova a cercare: Lezioni di Laravel" aria-describedby="basic-addon1"> -->
-                                        </div>
-                                </div>
-                                <div id="chat" class="col bg-white ">
-                                    
-                                        <div id="contacts" v-for="(currentContact, index) in contacts" class="d-flex align-items-center gap-2  p-3">
-                                            <img 
-                                            :src="currentContact.avatar" 
-                                            alt=""
-                                            class="rounded-5 "
-                                            >
-                                            <div class="d-flex flex-column ">
-                                                {{currentContact.name}}
-                                                <span>Ultimo messaggio inviato</span>
-                                            </div>
-                                            <span class="last-message">12:00</span>
-                                        </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    <div id="altri" >
-                        <div class="d-flex justify-content-between align-items-center ">
-
-                            <div class="d-flex">
-                                <img class="rounded-5 "src="./img/avatar_io.jpg" alt="">
-                                <div class="justify-content-center  m-0">
-                                    <span class="user">Sofia</span>
-                                    <p class="accesso">Ultimo accesso oggi alle 12:00</p class="accesso">
-                                </div>
-                            </div>
-                            <div id="icons-altri">
-                                <i class="fa-solid fa-magnifying-glass me-2"></i>
-                                <i class="fa-solid fa-paperclip me-2"></i>
-                                <i class="fa-solid fa-ellipsis-vertical me-2"></i>
-            
-                            </div>
-                        </div>
-                        <div class="d-flex flex-column align-items-center justify-content-center  mx-3">
-
-                            <div class="rounded-2 col-4 mt-3 ">
-                                <span>Hai fatto la spesa?</span>
-                                <p class="text-end">16:15</p>
-                            </div>
-                            <div class="rounded-2 bg-danger col-4 mt-3 align-items-end  ">
-                                <span>Ricordati le cipolle</span>
-                                <p class="text-end">16:15</p>
-                            </div>
-                            <div class="rounded-2 bg-white  col-4 mt-3 ">
-                                <span class="mt-2">SI!</span>
-                                <p class="text-end">18:22</p>
-                            </div>
-                        </div>
-                        <div id="messages" class="col bg-gray">
-                            <div class=" my-bg d-flex  justify-content-between align-items-center gap-2 p-2">
-                                <i class="fa-regular fa-face-smile"></i>
-                                <input 
-                                type="text" 
-                                class="form-control border-0 py-2 px-1 text-gray rounded-2" 
-                                placeholder="Messaggio" 
-                                aria-label="Messaggio" 
-                                aria-describedby="basic-addon1">
-                                <i class="fa-solid fa-microphone"></i>
-                            </div>
-                        </div>
-                        
-               
-    
-                    </div>
-            
-                    
-                    
-        
-            
         </div>
+
+     <div class="container-wrapper">
+         <div id="container">
+             
+         
+                     <div id="side-bar" >
+                         <div id="io">
+                             <div id="user-profile">
+                                 <img class="rounded-5 " src="./img/avatar_2.jpg" alt="foto1 utente">
+                                 <span>Gian Marco</span>
+                             </div>
+                             <div id="icons-io" >
+                                 <i class="fa-solid fa-circle-notch me-2"></i>
+                                 <i class="fa-solid fa-message me-2 "></i>
+                                 <i class="fa-solid fa-ellipsis-vertical me-2"></i>
+                             </div>
+         
+                         </div>
+                         
+                        <div id="notifiche">
+                            <div id="icon-notifiche">
+                                <i class="fa-solid fa-bell-slash"></i>
+                            </div>
+                            <div class="d-flex flex-column">
+                                <span>Ricevi notifiche di nuovi messaggi</span>
+                                <a href="">Attiva notifiche desktop</a>
+                            </div>
+                        </div>
+                        
+                            <div id="search-bar">
+                                    <button>
+                                        <i class="fa-solid fa-magnifying-glass ms-2"></i>
+                                    </button>
+                                        <input
+                                         type="search" 
+                                         placeholder="Cerca o inizia una nuova chat" 
+                                         aria-label="Search">                                    
+                            </div>
+                            <div id="chat">
+                                
+                                    <div class="chat-preview" v-for="(currentContact, index) in contacts">
+                                        <img 
+                                        :src="currentContact.avatar" 
+                                        alt=""
+                                        class="rounded-5 "
+                                        >
+                                        <div>
+                                            <div class="user-name">{{currentContact.name}}</div>
+                                            <div class="last-message">Ultimo messaggio inviato</div>
+                                            <div class="last-message-time">12:00</div>
+                                        </div>
+                                    </div>
+                                
+                            </div>
+                        
+                         
+                         
+                     </div>
+                     <div id="altri" >
+                         <div class="d-flex justify-content-between align-items-center ">
+ 
+                             <div class="d-flex">
+                                 <img class="rounded-5 "src="./img/avatar_io.jpg" alt="">
+                                 <div class="justify-content-center  m-0">
+                                     <span class="user">Sofia</span>
+                                     <p class="accesso">Ultimo accesso oggi alle 12:00</p class="accesso">
+                                 </div>
+                             </div>
+                             <div id="icons-altri">
+                                 <i class="fa-solid fa-magnifying-glass me-2"></i>
+                                 <i class="fa-solid fa-paperclip me-2"></i>
+                                 <i class="fa-solid fa-ellipsis-vertical me-2"></i>
+             
+                             </div>
+                         </div>
+                         <div class="d-flex flex-column align-items-center justify-content-center  mx-3">
+ 
+                             <div class="rounded-2 col-4 mt-3 bg-danger ">
+                                 <span>Hai fatto la spesa?</span>
+                                 <p class="text-end">16:15</p>
+                             </div>
+                             <div class="rounded-2 col-4 mt-3 align-items-end  ">
+                                 <span>Ricordati le cipolle</span>
+                                 <p class="text-end">16:15</p>
+                             </div>
+                             <div class="rounded-2 bg-white  col-4 mt-3 ">
+                                 <span class="mt-2">SI!</span>
+                                 <p class="text-end">18:22</p>
+                             </div>
+                         </div>
+                         <div id="messages" class="col bg-gray">
+                             <div class=" my-bg d-flex  justify-content-between align-items-center gap-2 p-2">
+                                 <button class="border-0 ">
+                                     <i class="fa-regular fa-face-smile"></i>
+                                 </button>
+                                 <input 
+                                 type="text" 
+                                 class="form-control border-0 py-2 px-1 text-gray rounded-2" 
+                                 placeholder="Messaggio" 
+                                 aria-label="Messaggio" 
+                                 aria-describedby="basic-addon1">
+                                 <button class="border-0 ">
+                                     <i class="fa-solid fa-microphone"></i>
+                                 </button>
+                             </div>
+                         </div>
+                         
+                
+     
+                     </div>
+             
+                     
+                     <div class="back-bottom">
+ 
+                     </div>
+ 
+         
+             
+         </div>
+     </div>
         
        
     </div>
