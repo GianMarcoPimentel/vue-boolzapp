@@ -126,8 +126,10 @@
                                  </button>
 
                                  <input 
+                                 v-model="newMessages.text"
                                  type="text" 
-                                 placeholder="Messaggio" 
+                                 placeholder="Messaggio"
+                                 @keyup.enter="addMessages()" 
                                  >
                                  <button class="border-0 ">
                                      <i class="fa-solid fa-microphone"></i>

@@ -1,9 +1,10 @@
 const { createApp } = Vue 
 
 createApp({
-    data(){
-        return{
-            activeContact : {},
+    data() {
+        return {
+            activeContact : {              
+            },
             contacts: [
                 {
                     name: 'Michele',
@@ -167,17 +168,30 @@ createApp({
                     ],
                 }
             ],
+            newMessages : [   {
+                message : '',
+                status: 'sent'       
+            } 
+            ],
             
             
         }
     },
-    mounted(){
+    mounted() {
         this.activeContact = this.contacts[0];
     },
     methods :{
 
-        changeChat(index){
+        changeChat(index) {
             this.activeContact = this.contacts[index];
+        },
+        addMessages() {
+            
+
+                this..messagges.push(this.newMessages);
+                this.newMessages.text="";
+            
+            console.log(this.newMessages);
         }
     }
 }).mount('#app')
