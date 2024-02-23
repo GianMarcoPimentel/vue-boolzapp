@@ -173,7 +173,10 @@ createApp({
                 status: 'sent'       
             },
             
-            
+            answers:   {
+                message : '',
+                status: 'received'       
+            },
         }
     },
     mounted() {
@@ -185,10 +188,6 @@ createApp({
             this.activeContact = this.contacts[index];
         },
         addMessages() {
-            
-
-                /* this.messagges.push(this.newMessages);
-                this.newMessages.text="" */;
                 if(this.newMessages.message.trim() != ""){
 
                     this.activeContact.messages.push({...this.newMessages});
@@ -199,20 +198,22 @@ createApp({
 
                 setTimeout(() => {
                     this.receiveMessage();
-                  }, 1000);
+                  }, 2000);
+                  this.newMessages.message = "";
         },
         receiveMessage() {
                   
             axios.get('https://flynn.boolean.careers/exercises/api/random/sentence').then((result) => {
                     
-                this.newMessages.status =  'received'
-                console.log( this.newMessages.status)
-                this.activeContact.messages.push(result.data.response)
+                this.answers.message = result.data.response;
+               
+                console.log( this.answers.status)
+                this.activeContact.messages.push({...this.answers})
                 console.log(result.data.response)
-                    
-              /* this.emails.push(result.data.response); */
+                
+                this.answers.message = "";
+             
             });
-
         },
     }
 }).mount('#app')
