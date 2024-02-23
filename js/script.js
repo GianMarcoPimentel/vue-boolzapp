@@ -166,9 +166,15 @@ createApp({
                         }
                     ],
                 }
-            ]
+            ],
             
             
+        }
+    },
+    methods :{
+
+        changeChat(index){
+            console.log(activeContactIndex)
         }
     }
 }).mount('#app')

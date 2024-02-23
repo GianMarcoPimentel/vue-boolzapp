@@ -58,7 +58,11 @@
                             </div>
                             <div id="chat">
                                 
-                                    <div class="chat-preview" v-for="(currentContact, index) in contacts">
+                                    <div 
+                                    class="chat-preview" 
+                                    v-for="(currentContact, index) in contacts"
+                                    @click="changeChat(index)"
+                                    >
                                         <img 
                                         :src="currentContact.avatar" 
                                         alt=""
