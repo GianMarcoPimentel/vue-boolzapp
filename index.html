@@ -98,20 +98,16 @@
                          </div>
                          <div id="current-chat">
                             <div class="container">
-                                <div class="message sent">
+                                <div 
+                                v-for="currentMessage in contacts[activeContactIndex].messages"
+                                class="message"
+                                :class="currentMessage.status"
+                                >
                                     <div class="text">
-                                        Ricordati le cipolle
+                                        {{currentMessage.message}}
                                     </div>
                                     <div class="time">
-                                        16:15
-                                    </div>
-                                </div>
-                                <div class="message recieved">
-                                    <div class="text">
-                                        Ricordati le cipolle
-                                    </div>
-                                    <div class="time">
-                                        16:15
+                                        {{currentMessage.date}}
                                     </div>
                                 </div>
                             </div>

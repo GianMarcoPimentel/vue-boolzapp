@@ -33,7 +33,7 @@ body{
     background-color: #dbdbd2;
     z-index: -1;
 }
-#ui-wrapper {
+.container-wrapper {
     width: 100vw;
     height: 100vh;
 
@@ -130,6 +130,9 @@ body{
 #altri{
     width: 70%; 
     position: relative;
+}
+#chat {
+    overflow-y: auto;
 }
 #chat-profile span {
     color: #777;
@@ -274,6 +277,7 @@ body{
 }
 #messages-bar{
     display: flex;
+    justify-content: space-between;
     gap: 15px;
      
     height: 70px;
@@ -296,4 +300,6 @@ body{
     padding: 20px 15px;
     border: none;
     border-radius: 10px;
+
+    flex-grow: 1;
 }
