@@ -54,15 +54,19 @@
                                         <i class="fa-solid fa-magnifying-glass ms-2"></i>
                                     </button>
                                         <input
-                                         type="search" 
+                                         v-model="searchQuery"
+                                         
+                                         type="text" 
                                          placeholder="Cerca o inizia una nuova chat" 
-                                         aria-label="Search">                                    
+                                         aria-label="text"
+                                         >   
+                                                                         
                             </div>
                             <div id="chat">
                                 
                                     <div 
                                     class="chat-preview" 
-                                    v-for="(contact, index) in contacts"
+                                    v-for="(contact, index) in filteredContacts"
                                     :class="contact == activeContact ? 'active' : '' "
                                     @click="changeChat(index)"
                                     >
@@ -72,30 +76,15 @@
                                         class="rounded-5 "
                                         >
                                         <div>
-                                            <div class="user-name">{{contact.name}}</div>
+                                            <ul class="user-name list-unstyled ">
+                                                <li>{{contact.name}}</li>
+                                            </ul>
                                             <div class="last-message">Ultimo messaggio inviato</div>
                                             <div class="last-message-time">12:00</div>
                                         </div>
                                     </div>
                                     
-                                
-                                        <div 
-                                        class="chat-preview" 
-                                        v-for="(contact, index) in contacts"
-                                        :class="contact == activeContact ? 'active' : '' "
-                                        @click="changeChat(index)"
-                                        >
-                                            <img 
-                                            :src="contact.avatar" 
-                                            alt=""
-                                            class="rounded-5 "
-                                            >
-                                            <div>
-                                                <div class="user-name">{{contact.name}}</div>
-                                                <div class="last-message">Ultimo messaggio inviato</div>
-                                                <div class="last-message-time">12:00</div>
-                                            </div>
-                                        </div>
+                            
                                     
                                 
                             </div>
@@ -133,9 +122,16 @@
                                 class="message"
                                 :class="currentMessage.status"
                                 >
-                                    <div class="text">
-                                        {{currentMessage.message}}
+                                    <div 
+                                    @click="toggleVisibility(index)"
+                                    class="text"
+                                    >
+                                        {{currentMessage.message}}        
                                     </div>
+                                    <div 
+                                    id="deletebtn_{{index}}"
+                                    @click="deleteMessage()"
+                                    class="bg-white d-none">Delete Message</div>
                                     <div class="time">
                                         {{currentMessage.date}}
                                     </div>

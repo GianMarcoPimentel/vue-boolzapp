@@ -177,10 +177,19 @@ createApp({
                 message : '',
                 status: 'received'       
             },
+            searchQuery: '',
+            
+            isVisible: false,
+
+            //filteredContacts : [],
         }
     },
+    
     mounted() {
         this.activeContact = this.contacts[0];
+
+      // this.filtraContatti() ;
+
     },
     methods :{
 
@@ -215,5 +224,28 @@ createApp({
              
             });
         },
-    }
+
+        
+
+        toggleVisibility(activeContact){
+
+            console.log(activeContact);
+        },
+
+        
+    },  
+    computed : {
+        filteredContacts() {
+           // this.filteredContacts = this.contacts;
+            /* return this.filteredContacts.filter(contact => {
+              return contact.name.toLowerCase().includes(this.searchQuery.toLowerCase());
+            }) */
+            if(this.searchQuery.trim().length > 0){
+                return this.contacts.filter(contact => contact.name.toLowerCase().includes(this.searchQuery.trim()))
+            }
+           return this.contacts;
+        },
+    },
 }).mount('#app')
+
+
