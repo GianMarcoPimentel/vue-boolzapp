@@ -156,6 +156,7 @@ body{
 #current-chat {
     height: calc(100% - 70px - 70px);
     background-image: url('../img/mine.jpg');
+    overflow-y: scroll;
 }
 #current-chat .container {
     /* contenitore diretto dei messaggi della chat */
