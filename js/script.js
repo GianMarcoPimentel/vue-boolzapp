@@ -192,22 +192,26 @@ createApp({
 
     },
     methods :{
-
+        // per cambiare la chat devo fare rifermineto all'index, per poin al click selezionare esattemnete quello voluto
         changeChat(index) {
             this.activeContact = this.contacts[index];
         },
         addMessages() {
-                if(this.newMessages.message.trim() != ""){
-
+            // per aggiungere un messaggio devo fare si che non sia vuoto (metodo .trim())
+            if(this.newMessages.message.trim() != ""){
+                
+                // pusharlo con lo spread operator in modo che possa aggiungerne altri
                     this.activeContact.messages.push({...this.newMessages});
-                    console.log( this.newMessages.status)
+                 //   console.log( this.newMessages.status)
+                // ripristinare il testo della barra in (vuoto)
                     this.newMessages.message = "";
                 };
 
-
+                //  con il set timeout devo richiamrae la funzione receiveMessage()
                 setTimeout(() => {
                     this.receiveMessage();
                   }, 2000);
+                  // ripristinare il testo in (vuoto)
                   this.newMessages.message = "";
         },
         receiveMessage() {
@@ -216,7 +220,9 @@ createApp({
                     
                 this.answers.message = result.data.response;
                
-                console.log( this.answers.status)
+             //   console.log( this.answers.status)
+                // pusharlo con lo spread operator in modo che possa aggiungerne altri
+
                 this.activeContact.messages.push({...this.answers})
                 console.log(result.data.response)
                 
@@ -227,10 +233,10 @@ createApp({
 
         
 
-        toggleVisibility(activeContact){
+       /*  toggleVisibility(activeContact){
 
             console.log(activeContact);
-        },
+        }, */
 
         
     },  
@@ -241,8 +247,13 @@ createApp({
               return contact.name.toLowerCase().includes(this.searchQuery.toLowerCase());
             }) */
             if(this.searchQuery.trim().length > 0){
+                // filtro i conatti in modo che contacts abbai il nome
+                //scritto in qualsiasi modo sarà restituito in minuscolo grazie a toLowerCase()
+                // con il meotodo inludes() perchè devo prenderlo solo se è presente
+                // la searchQuery.trim()
                 return this.contacts.filter(contact => contact.name.toLowerCase().includes(this.searchQuery.trim()))
             }
+            // deve 'ritornarmi' 
            return this.contacts;
         },
     },
